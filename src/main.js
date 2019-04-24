@@ -10,19 +10,21 @@ import './common/directive.js' //自定义指令
 import util from '@/common/util.js' //公共方法
 import * as https from '@/common/http.js'
 import store from './store/index.js' //vuex全局store
+import './common/component'
+
 Vue.use(ElementUI)
-Vue.use(filters);
+Vue.use(filters)
 Vue.config.productionTip = false
-window.eventBus = new Vue();
-window.myGet = Vue.prototype.myGet = https.myGet;
-window.myPost = Vue.prototype.myPost = https.myPost;
-window.myPut = Vue.prototype.myPut = https.myPut;
-window.myDelete = Vue.prototype.myDelete = https.myDelete;
-Vue.prototype.util = util;
+window.eventBus = new Vue()
+window.myGet = Vue.prototype.myGet = https.myGet
+window.myPost = Vue.prototype.myPost = https.myPost
+window.myPut = Vue.prototype.myPut = https.myPut
+window.myDelete = Vue.prototype.myDelete = https.myDelete
+Vue.prototype.util = util
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    components: { App },
-    template: '<App/>'
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
 })
