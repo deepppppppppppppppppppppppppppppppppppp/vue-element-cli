@@ -9,7 +9,9 @@ import filters from '@/common/filter.js' //全局filter
 import './common/directive.js' //自定义指令
 import util from '@/common/util.js' //公共方法
 import * as https from '@/common/http.js'
+import renderTree from './common/render';
 import store from './store/index.js' //vuex全局store
+Vue.use(renderTree)
 Vue.use(ElementUI)
 Vue.use(filters);
 Vue.config.productionTip = false
