@@ -1,33 +1,25 @@
 <template>
   <div class="hello">
-    <hello name="name"
-      id="id"
-      t="t"
-      v-on:focusHello1="one"
-      v-on:focusHello2="two"
-      v-on:focusHello3="three"> </hello>
+    <br>
+    <br>
+    <h1>好好学习,hello3</h1>
+    <p @click="focusHello3">{{$attrs.t}}</p>
   </div>
 </template>
 
 <script>
-  import hello from '@/components/HelloWorld.vue'
   export default {
-    name: 'demo',
-    components: { hello },
+    name: 'HelloWorld',
+    interitAttrs: false, // $attrs不在渲染阶段显示在 html标签上
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     },
     methods: {
-      one(msg) {
-        console.log('msg1:', msg)
-      },
-      two(msg) {
-        console.log('msg2:', msg)
-      },
-      three(msg) {
-        console.log('msg3:', msg)
+      focusHello3() {
+        console.log('hello-3')
+        this.$emit('focusHello3', 'parent-hello-3')
       }
     }
   }
