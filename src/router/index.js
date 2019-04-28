@@ -6,8 +6,8 @@ Vue.use(Router)
 const Home = r => require.ensure([], () => r(require('@/pages/home/home.vue')), 'home')
 const demo = r => require.ensure([], () => r(require('@/pages/demo/index.vue')), 'demo') // $attrs,$listeners
 const radio = r => require.ensure([], () => r(require('@/pages/radio/index.vue')), 'radio')
-const transition = r =>
-  require.ensure([], () => r(require('@/pages/element-transition/index.vue')), 'transition') // 函数式组件
+const customtag = r =>
+  require.ensure([], () => r(require('@/pages/element-customtag/index.vue')), 'customtag') // 函数式组件
 const functionButton = r =>
   require.ensure([], () => r(require('@/pages/functionButton/index.vue')), 'functionButton') // 函数式组件
 const renderComponent = r =>
@@ -67,10 +67,10 @@ export default new Router({
           }
         },
         {
-          title: 'eleTransition',
-          path: 'transition',
-          name: 'transition',
-          component: transition,
+          title: 'eleCustomtag',
+          path: 'customtag',
+          name: 'customtag',
+          component: customtag,
           meta: {
             keepAlive: false
           }

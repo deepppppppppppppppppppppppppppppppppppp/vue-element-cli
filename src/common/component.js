@@ -1,19 +1,16 @@
 import Vue from 'vue'
-import elementCustomtag from '../pages/element-transition/customtag'
+import XCustomtag from '../pages/element-customtag/customtag'
+import functionButton from '../pages/functionButton/functionButton'
+import ElCollapseTransition from '../common/transition'
 
-const components = [elementCustomtag]
+const components = [XCustomtag, functionButton, ElCollapseTransition]
 
-const install = (Vue, opt = {}) => {
-  console.log('init components')
-  components.forEach(component => {
-    console.log(':', component.name)
-    Vue.component(component.name, component)
-  })
+const Global = {
+  install: (Vue, opt = {}) => {
+    components.forEach(component => {
+      Vue.component(component.name, component)
+    })
+  }
 }
 
-;(function() {
-  if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue)
-  }
-  install(Vue)
-})()
+export default Global

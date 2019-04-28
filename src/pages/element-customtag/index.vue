@@ -2,21 +2,34 @@
   <div class="hello">
     <br>
     <br>
-    <h1>element-transition</h1>
-    <element-customtag @click="getElementText"
+    <h1>element-customtag</h1>
+    <br>
+    <br>
+    <x-customtag name="x-customtag"
+      @click="getElementText"
       @dblclick="setElementText">
-      <p>1231321</p>
-    </element-customtag>
+      <p @click="iscollapse=!iscollapse">FunctionalRenderContext</p>
+    </x-customtag>
+
+    <el-collapse-transition name="el-collapse-transition">
+      <div v-show="iscollapse">
+        <p>transition</p>
+      </div>
+    </el-collapse-transition>
   </div>
 </template>
 
 <script>
   export default {
     name: 'customtag',
-    created() {},
+    data() {
+      return {
+        iscollapse: true
+      }
+    },
     methods: {
       getElementText() {
-        console.log(123)
+        alert(11)
       },
       setElementText() {}
     }
