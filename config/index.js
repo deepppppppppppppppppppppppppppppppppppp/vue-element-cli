@@ -35,11 +35,13 @@ module.exports = {
   },
 
   build: {
+    testEnv: require('./test.env'), // 新增
+    prodEnv: require('./prod.env'), // 新增
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
-
-    // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    // index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../dist-' + process.env.env_config + '/index.html'),
+    // assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../dist-' + process.env.env_config),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
 

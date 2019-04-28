@@ -1,0 +1,2 @@
+webpackJsonp([5],{cnYr:function(t,n){},zLW5:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var i={components:{functionButton:e("5MkA").a}},s={render:function(){var t=this.$createElement,n=this._self._c||t;return n("div",{staticClass:"hello"},[n("br"),this._v(" "),n("br"),this._v(" "),n("h1",[this._v("function-button")]),this._v(" "),n("function-button")],1)},staticRenderFns:[]};var c=e("VU/8")(i,s,!1,function(t){e("cnYr")},"data-v-1aadfa1e",null);n.default=c.exports}});
+//# sourceMappingURL=5.functionButton.fd604a20585daf842d6f.js.map
