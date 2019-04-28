@@ -5,12 +5,10 @@ import ElCollapseTransition from '../common/transition'
 
 const components = [XCustomtag, functionButton, ElCollapseTransition]
 
-const Global = {
+export default {
   install: (Vue, opt = {}) => {
     components.forEach(component => {
       Vue.component(component.name, component)
     })
   }
 }
-
-export default Global
