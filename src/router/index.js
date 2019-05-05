@@ -36,7 +36,7 @@ export default new Router({
           name: 'demo',
           component: demo,
           meta: {
-            keepAlive: false
+            keepAlive: true
           }
         },
         {

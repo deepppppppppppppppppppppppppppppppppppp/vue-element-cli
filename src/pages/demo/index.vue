@@ -11,6 +11,8 @@
 
 <script>
   import hello from '@/components/HelloWorld.vue'
+  import es from '@/es6/class.js'
+
   export default {
     name: 'demo',
     components: { hello },
@@ -18,6 +20,11 @@
       return {
         msg: 'Welcome to Your Vue.js App'
       }
+    },
+    created() {
+      const { Parent, Child } = es
+      const person = new Parent('xcy', 'man')
+      const child = new Child('son', 5, 'manman')
     },
     methods: {
       one(msg) {
@@ -29,6 +36,15 @@
       three(msg) {
         console.log('msg3:', msg)
       }
+    },
+    /**
+     * 生命周期，只作用与 keep-alive组件
+     */
+    activated() {
+      console.log('activated', this.$route.path)
+    },
+    deactivated() {
+      console.log('deactivated', this.$route.path)
     }
   }
 </script>
