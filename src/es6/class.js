@@ -33,7 +33,30 @@ console.log('child: ', child) // child:  Child {name: "Child", age: 18}
 Child.sayHello() // hello
 child.sayName() // my name is Child
 child.sayAge() // my age is 18
+let a = new Map()
+a.set('name', 'xcy')
+console.log(a, a.get('name'))
+console.log(a, a.has('name'))
 
+let b = new Set()
+console.log(b)
+b.add('age')
+console.log(b, b.has('age'), b.size)
+console.log(Array.from(b))
+console.log([...b])
+
+function Nn() {
+  this.name = 1
+}
+Nn.prototype.age = function() {
+  console.log(this.name)
+}
+
+function Nnn() {
+  Nn.call(this)
+}
+var nn = new Nnn()
+console.log(nn)
 export default {
   Parent,
   Child
