@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <button @click="curried(1)">curried</button>
-    <!-- <router-view /> -->
+    <router-view />
   </div>
 </template>
 

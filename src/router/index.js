@@ -16,6 +16,9 @@ const renderComponent = r =>
     () => r(require('@/pages/noRenderComponent/index.vue')),
     'renderComponent'
   ) // 无渲染组件
+const testmore = r =>
+  require.ensure([], () => r(require('@/pages/testmore/index.vue')), 'testmore') // test
+const pop = r => require.ensure([], () => r(require('@/pages/pop/index.vue')), 'pop') // pop
 
 export default new Router({
   routes: [
@@ -74,6 +77,18 @@ export default new Router({
           meta: {
             keepAlive: false
           }
+        },
+        {
+          title: 'testmore',
+          path: 'testmore',
+          name: 'testmore',
+          component: testmore
+        },
+        {
+          title: 'pop',
+          path: 'pop',
+          name: 'pop',
+          component: pop
         }
       ]
     }
