@@ -1,9 +1,6 @@
 <template>
   <div class="hello">
-    <div @click="showFilterHeader($event)"
-      id="filter-header">ilter-header</div>
-    <br>
-    <h1 @click.stop="showFilterHeader($event)">testmore</h1>
+    <h1 @click="showFilterHeader($event)">testmore</h1>
     <div>
 
     </div>
@@ -16,25 +13,9 @@
     data() {
       return {}
     },
-    mounted() {
-      // 点击其他区域时, 隐藏指定区域(cDom)
-      document.addEventListener('click', event => {
-        var cDom = document.querySelector('#filter-header')
-        var tDom = event.target
-        if (cDom == tDom || cDom.contains(tDom)) {
-          // ...
-          console.log('包含')
-        } else {
-          console.log('不包含')
-          cDom.style.display = 'none'
-        }
-      })
-    },
+    mounted() {},
     methods: {
-      showFilterHeader(event) {
-        // event.stopPropagation()
-        document.querySelector('#filter-header').style.display = 'block'
-      }
+      showFilterHeader(event) {}
     }
   }
 </script>

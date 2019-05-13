@@ -19,7 +19,17 @@
     },
     mounted() {
       // 点击其他区域时, 隐藏指定区域(cDom)
-      document.addEventListener('click', event => {
+      document.addEventListener('click', this.popEvent)
+    },
+    methods: {
+      showFilterHeader(event) {
+        // event.stopPropagation()
+        document.querySelector('#filter-header').style.display = 'block'
+      },
+      /**
+       * contains 包含 弹窗方法
+       */
+      popEvent(event) {
         var cDom = document.querySelector('#filter-header')
         var tDom = event.target
         if (cDom == tDom || cDom.contains(tDom)) {
@@ -29,13 +39,10 @@
           console.log('不包含')
           cDom.style.display = 'none'
         }
-      })
-    },
-    methods: {
-      showFilterHeader(event) {
-        // event.stopPropagation()
-        document.querySelector('#filter-header').style.display = 'block'
       }
+    },
+    beforeDestroy() {
+      document.removeEventListener('click', this.popEvent)
     }
   }
 </script>
