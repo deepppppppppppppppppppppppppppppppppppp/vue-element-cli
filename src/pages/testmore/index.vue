@@ -13,6 +13,23 @@
     data() {
       return {}
     },
+    created() {
+      function a() {
+        console.log(this)
+      }
+      a()
+      let _thata = a.bind(window)
+      _thata()
+
+      // let aDOMFunc = [
+      //   Element.prototype.removeAttribute,
+      //   Element.prototype.setAttribute,
+      //   CSSStyleDeclaration.prototype.removeProperty,
+      //   CSSStyleDeclaration.prototype.setProperty
+      // ]
+
+      // console.log(aDOMFunc)
+    },
     mounted() {},
     methods: {
       showFilterHeader(event) {}
