@@ -5,7 +5,8 @@
       t="t"
       v-on:focusHello1="one"
       v-on:focusHello2="two"
-      v-on:focusHello3="three"> </hello>
+      v-on:focusHello3="three">
+    </hello>
   </div>
 </template>
 
