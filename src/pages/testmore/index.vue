@@ -40,10 +40,35 @@
       console.log('flatten:', Utils.flatten(this.flattarr))
       // -------------------------------------------------
       console.log('sortedIndex:', Utils.sortedIndex([10, 20, 30, 40, 50], 35)) // 3
+      // -------------------------------------------------
+      this.curryFn()
+      // -------------------------------------------------
     },
     mounted() {},
     methods: {
-      showFilterHeader(event) {}
+      showFilterHeader(event) {},
+      curryFn() {
+        var person = [{ name: 'kevin' }, { name: 'daisy' }]
+
+        var curry = function(fn) {
+          var args = [].slice.call(arguments, 1)
+          return function() {
+            var newArgs = args.concat([].slice.call(arguments))
+            return fn.apply(this, newArgs)
+          }
+        }
+
+        var name = person.map(function(item) {
+          return item.name
+        })
+
+        var prop = curry(function(key, obj) {
+          return obj[key]
+        })
+
+        var name = person.map(item => prop('name', item))
+        console.log(name)
+      }
     },
     components: {
       fatherSync
